@@ -57,11 +57,11 @@ const FetchingUseReducer = () => {
             <tbody>
               {data.map(item=>{
                 return (
-                  <tr>
+                  <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.albumId}</td>
                     <td>{item.title}</td>
-                    <td><img src="https://dummyjson.com/image/250x100" alt={item.title} width={100}/></td>
+                    <td><img src="https://dummyjson.com/image/250x100" alt={item.title} width={100} loading='lazy'/></td>
                   </tr>
                 )
               })}

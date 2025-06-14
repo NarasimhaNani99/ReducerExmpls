@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import ReducerDemo from './components/ReducerDemo'
-import FetchingUseReducer from './components/FetchingUseReducer'
+const ReducerDemo = lazy(()=> import('./components/ReducerDemo'))
+const FetchingUseReducer = lazy(()=>import ('./components/FetchingUseReducer'))
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,15 +12,17 @@ function App() {
 
   return (
     <>
-      <div className='row flex'>
-        <h1>Use Reducer</h1>
-        <div className='col-4 col-md-12 mb-5'>
-          <ReducerDemo />
+      <Suspense fallback={<p>Please Wait...</p>} >
+        <div className='row flex '>
+          <h1>Use Reducer</h1>
+          <div className='col-md-12 mb-5'>
+            <ReducerDemo />
+          </div>
+          <div className='col-md-12 mb-5 table-responsive'>
+            <FetchingUseReducer/>
+          </div>
         </div>
-        <div className='col-8 col-md-12 mb-5'>
-          <FetchingUseReducer/>
-        </div>
-      </div>
+      </Suspense>
     </>
   )
 }
