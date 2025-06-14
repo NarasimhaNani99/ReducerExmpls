@@ -14,11 +14,11 @@ function App() {
     <>
       <div className='row flex'>
         <h1>Use Reducer</h1>
-        <div className='col-md-8 '>
-          <FetchingUseReducer/>
-        </div>
-        <div className='col-md-4 '>
+        <div className='col-4 col-md-12 mb-5'>
           <ReducerDemo />
+        </div>
+        <div className='col-8 col-md-12 mb-5'>
+          <FetchingUseReducer/>
         </div>
       </div>
     </>
