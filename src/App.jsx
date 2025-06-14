@@ -12,9 +12,15 @@ function App() {
 
   return (
     <>
-      <h1>Use Reducer</h1>
-      {/* <ReducerDemo /> */}
-      <FetchingUseReducer/>
+      <div className='row flex'>
+        <h1>Use Reducer</h1>
+        <div className='col-md-8 '>
+          <FetchingUseReducer/>
+        </div>
+        <div className='col-md-4 '>
+          <ReducerDemo />
+        </div>
+      </div>
     </>
   )
 }

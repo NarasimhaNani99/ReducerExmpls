@@ -8,7 +8,7 @@ const scaling = (state, action) =>{
 
     case "Decrease":
       return {...state, count:state.count-1}
-      
+
     default:
       return state;
   }
@@ -22,8 +22,8 @@ const ReducerDemo = () => {
   return (
     <>
     <h3>Count is: {state.count}</h3>
-    <button onClick={()=> dispatch({ type:"Increase"})}>Increase</button>&nbsp;
-    <button onClick={()=> dispatch({ type:"Decrease"})}>Decrease</button>
+    <button className='btn btn-primary' onClick={()=> dispatch({ type:"Increase"})}>Increase</button>&nbsp;
+    <button className='btn btn-info' onClick={()=> dispatch({ type:"Decrease"})}>Decrease</button>
     </>
   )
 }
